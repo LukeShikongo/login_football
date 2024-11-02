@@ -19,27 +19,54 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final passwordController = TextEditingController();
   final isObsecure = true.obs;
 
-  validateUserEmail() async {
-    try {
+  // validateUserEmail() async {
+  //   try {
+  //     var res = await http.post(
+  //       Uri.parse(API.validateEmail),
+  //       body: {
+  //         "user_email": emailController.text.trim(),
+  //       },
+  //     );
+  //     if (res.statusCode == 200) {
+  //       var resBodyOfValidateEmail = jsonDecode(res.body);
+  //       if (resBodyOfValidateEmail['emailFound'] == true) {
+  //         Fluttertoast.showToast(msg: "Email is already in use");
+  //       } else {
+  //         // Register a new user to the database
+  //         registersaveUserRecord();
+  //       }
+  //     }
+  //   } catch (e) {
+  //     Fluttertoast.showToast(msg: "Error: $e");
+  //   }
+  // }
+
+validateUserEmail() async{
+    try{
       var res = await http.post(
-        Uri.parse(API.validateEmail),
-        body: {
-          "user_email": emailController.text.trim(),
-        },
+       Uri.parse( 'http://192.168.249.163/api_football/user/validate_email'),
+       body: {
+        "user_email": emailController.text.trim(),
+       }
       );
-      if (res.statusCode == 200) {
+      if(res.statusCode == 200){
         var resBodyOfValidateEmail = jsonDecode(res.body);
-        if (resBodyOfValidateEmail['emailFound'] == true) {
+
+        if(resBodyOfValidateEmail['emailFound'] == true){
+
           Fluttertoast.showToast(msg: "Email is already in use");
-        } else {
-          // Register a new user to the database
+        }
+        else{
+          // register a new user to a database
           registersaveUserRecord();
         }
       }
-    } catch (e) {
+
+    }catch(e){
       Fluttertoast.showToast(msg: "Error: $e");
     }
   }
+
 
   registersaveUserRecord() async {
   User userModel = User(

@@ -1,0 +1,50 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "nam-football",
+          "appId": "1:712333810476:android:7363c8f9285c099cd3aa89",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "nam-football",
+          "configurations": {
+            "android": "1:712333810476:android:7363c8f9285c099cd3aa89",
+            "ios": "1:712333810476:ios:f4378ba486a34a65d3aa89",
+            "macos": "1:712333810476:ios:f4378ba486a34a65d3aa89",
+            "web": "1:712333810476:web:f6b87241cbfa35ffd3aa89",
+            "windows": "1:712333810476:web:3ec4c7a0654eabe9d3aa89"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+
+    },
+    {
+      "source": "fooball",
+      "codebase": "namfootball_app",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "712333810476",
+    "project_id": "nam-football",
+    "storage_bucket": "nam-football.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712333810476:android:7363c8f9285c099cd3aa89",
+        "android_client_info": {
+          "package_name": "com.example.nam_football"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7NY8RJtnqo-TkaFT-YNETKNTEjaw7LaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
